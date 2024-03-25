@@ -14,8 +14,11 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('shop/', include('shop.urls')) # includem toate marshuturile descrise din 'shop\urls.py'
+                                        # toate vor fi accesible pe adresa 'shop/'
+                                        # Aici putem sa zicem am concetat toate marshuturile din aplicatiea 'shop'
 ]
