@@ -10,15 +10,19 @@
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
-    <nav class="navbar navbar-dark bg-dark">
-        <div class="container">
-            <a href="" class="navbar-brand">Courses Shop</a>
-
-        </div>
-    </nav>
-    <main class="container">
-        {% block content %}
-        {% endblock %}
-    </main>
+<nav class="navbar navbar-dark bg-dark ">
+    <div class="container">
+        <ul class="navbar-nav">
+            <li>
+                <a href={% url "shop:category"%} class="navbar-brand">All Categorys</a>
+                <a href={% url "shop:courses"%} class="navbar-brand">All Courses Shop</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<main class="container">
+    {% block content %}
+    {% endblock %}
+</main>
 </body>
 </html>

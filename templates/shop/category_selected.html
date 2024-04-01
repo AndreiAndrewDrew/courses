@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}Selected Courses By Category{% endblock %}
+
+{% block content %}
+
+<table class="table mt-5 table-bordered table-striped table-hover">
+    <thead class="table-dark">
+    <tr>
+        <th>ID</th>
+        <th>Category</th>
+        <th>Title</th>
+        <th>Price</th>
+        <th>Students Quantity</th>
+        <th>Buy Course</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    {% for course in courses %}
+
+    <tr>
+        <td>{{course.id}}</td>
+        <td>{{course.category}}</td>
+        <td>
+            <a href={% url "shop:course_selected" course.id %}>{{course.title}}</a>
+        </td>
+        <td>{{course.price}}</td>
+        <td>{{course.students_qty}}</td>
+        <td>
+            <button class="btn btn-primary">Buy</button>
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
