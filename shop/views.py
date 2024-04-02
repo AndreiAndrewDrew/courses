@@ -32,6 +32,5 @@ def category(request):
 
 
 def category_selected(request, category_id):
-    # category = Category.objects.get(pk=category_id)
     courses = Course.objects.filter(category_id=category_id)
     return render(request, 'shop/category_selected.html', {'courses': courses})
